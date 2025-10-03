@@ -1,13 +1,12 @@
-/**
- * document.createElement()
- * element.classList.add()
- * element.innerHTML
- * elemParent.appendChild(elemEnfant)
- * element.remove()
- * setTimeout()
- */
-
-// 1. Je recupere le bouton
 const btn = document.querySelector("button");
-// 2. Je recupere le conteneur de toasts
 const ctnToasts = document.querySelector(".container-toasts");
+
+btn.addEventListener("click", ()=>{
+    const newToast = document.createElement("div");
+    newToast.classList.add("toast");
+    const newToastMsg = document.createElement("p");
+    newToastMsg.innerText = "Votre fichier est enregistré !";
+    ctnToasts.appendChild(newToast);
+    newToast.appendChild(newToastMsg);
+    setTimeout(()=>{newToast.remove()}, 3000)
+})

@@ -1,21 +1,21 @@
-/*
-Nouvelles compétences:
- - Font awesome
- - type Boolean
- - if else
- - HTMLElement.classList
-    - toggle Inverse l'etat de la classe : present ou pas
-    * add
-    * remove
-    * replace
-*/
+const smiley = document.querySelector("#emoji")
+const btnSub = document.querySelector(".btn-sub")
+let isSubscribed = false;
 
-// 1. Je recupere l'icone smiley
+smiley.addEventListener("click", function(){
+    smiley.classList.toggle("fa-face-meh");
+    smiley.classList.toggle("fa-face-smile");
+    smiley.classList.toggle("yellow-color")
+});
 
-// 2. Je recupere le bouton ABONNER
-
-// 3. Je défini une variable binaire qui exprime l'etat abonné ou non de l'utilisateur
-
-// 4. J'ecoute le clique sur l'icone smiley
-
-// 5. J'ecoute l'evenemment click sur le bouton ABONNEZ
+btnSub.addEventListener("click", function(){
+    if (!isSubscribed) {
+        btnSub.classList.add("background-grey", "white-font");
+        btnSub.innerText = "Abonné";
+        isSubscribed = true;
+    }else if (isSubscribed) {
+        btnSub.classList.remove("background-grey", "white-font");
+        btnSub.innerText = "Abonnez-vous";
+        isSubscribed = false;
+    }
+})

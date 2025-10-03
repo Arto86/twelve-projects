@@ -38,7 +38,7 @@ body{
 .navbar-mobile{
     background-color: blueviolet;
     padding: 1rem;
-
+    height: 7vh;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -49,6 +49,9 @@ body{
 }
 .navbar-mobile .burger:active {
     scale:0.99;
+}
+.fa-xmark{
+    font-size: 5rem;
 }
 
 /*fenetre modale*/

@@ -27,7 +27,28 @@ const message = document.getElementById("message");
 form.addEventListener("submit",function(event){
     // 3. J'annule le comportement par défaut du formulaire  : qui consiste à envoyer une requete http GET à l'adresse de l'attribut action du formualire et donc recharger la page
     event.preventDefault();
-    // ..
+
+    const prenomErr = prenom.nextElementSibling;
+    const nomErr = nom.nextElementSibling;
+    const emailErr = email.nextElementSibling;
+    const msgErr = message.nextElementSibling;
+
+    if (prenom.value.length > 20 || prenom.value.length < 2) {
+        prenomErr.classList.remove("invisible")
+    } else { prenomErr.classList.add("invisible") };
+
+    if (nom.value.length > 20 || nom.value.length < 2) {
+        nomErr.classList.remove("invisible")
+    } else { nomErr.classList.add("invisible") }
+
+    if (isValidEmail) {
+        emailErr.classList.remove("invisible")
+    } else { emailErr.classList.add("invisible") }
+
+    if (message.value.length > 100 || message.value.length < 10) {
+        msgErr.classList.remove("invisible")
+    } else { msgErr.classList.add("invisible") }
+
 });
 
 /**
